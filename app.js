@@ -18,6 +18,7 @@ window.lirinImg=n=>'/images/'+encodeURIComponent(KEEP_SPACES.includes(n)?n:Strin
     {soon:1,                    icon:'sash',    label:'Sash Absorption'},
     {href:'/metin-simulator/', icon:'metin',   label:'Metin Simulator'},
     {soon:1,                    icon:'coin',    label:'Coin Calculator'},
+    {href:'/upgrade-coin-calculator/', icon:'coin', label:'Upgrade Coin Calculator'},
     {href:'/gaya-calculator/', icon:'gaya',    label:'Gaya Calculator'}
   ];
   const ICONS={
