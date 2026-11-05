@@ -1,0 +1,7 @@
+function solve(data){
+const {items,coins}=data;const budget=coins.map((c,j)=>Math.min(c.balance,items.reduce((s,it)=>s+it.qty*(it.costs[j]||0),0)));let states=new Map([['0,'.repeat(coins.length).slice(0,-1),{used:coins.map(()=>0),value:0,path:null}]]);let ops=0;
+for(let i=0;i<items.length;i++){const it=items[i];for(let unit=0;unit<it.qty;unit++){const next=new Map(states);for(const s of states.values()){for(let j=0;j<coins.length;j++){const cost=it.costs[j];if(!cost||!it.price||s.used[j]+cost>budget[j])continue;if(++ops>30000000)throw Error('This setup is too large for exact calculation in your browser. Reduce quantities or the number of coins. No approximate plan will be shown as optimal.');const used=s.used.slice();used[j]+=cost;const k=used.join(',');const v=s.value+it.price;const old=next.get(k);if(!old||v>old.value)next.set(k,{used,value:v,path:{i,j,prev:s.path}})}}if(next.size>200000)throw Error('Too many combinations for this browser. Reduce the number of coins or quantities.');states=next}}
+let best;for(const s of states.values()){if(!best||s.value>best.value||(s.value===best.value&&s.used.reduce((a,b)=>a+b,0)<best.used.reduce((a,b)=>a+b,0)))best=s}const bought=items.map(()=>coins.map(()=>0));for(let p=best.path;p;p=p.prev)bought[p.i][p.j]++;return {bought,used:best.used,saved:best.value,total:items.reduce((s,it)=>s+it.qty*it.price,0)};
+}
+
+if(typeof module!=="undefined")module.exports=solve;

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upgrade Coin Calculator — LIRIN</title>
+<meta name="description" content="Plan coin-shop purchases for your upgrades and minimize the Yang you pay.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Upgrade Coin Calculator — LIRIN">
+<meta property="og:description" content="Plan coin-shop purchases for your upgrades and minimize the Yang you pay.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f1013">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/inter-500.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/inter-600.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/cormorant-600.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/common.css">
+<link rel="stylesheet" href="/upgrade-coin-calculator/calculator.css">
+</head><body><div class="app-root"><nav id="sidebar"></nav><script src="/app.js"></script>
+<main class="main uc"><div class="inner">
+<h1>UPGRADE COIN CALCULATOR</h1><div class="line"></div>
+<p class="note">Use your coins where they save the most Yang. Buy only the materials you need.</p>
+<div class="toolbar"><button class="btn ghost" id="example">Load helmet +4 example</button><button class="btn ghost" id="clear">Start fresh</button></div>
+<div class="layout"><section class="panel"><div class="sectionhead"><h2>Coins & Shop Offers</h2><button class="btn" id="addcoin">+ Add coin</button></div><div class="pbody"><div id="coins"></div><p class="tiny">All costs are per item. Coin balances and quantities must be whole numbers.</p></div></section>
+<section class="panel"><h2>Required Materials</h2><div class="pbody"><p class="tiny">Enter the total materials for your craft and every upgrade step.</p><div class="need colheads"><span>Material</span><span>Quantity</span><span>Yang / item (kk)</span><span></span></div><div id="needs" class="rows"></div><button class="btn add ghost" id="addneed">+ Add material</button><p class="note smallnote">One material, one Yang price. Use the same name across shops to keep its price in sync.</p><p class="tiny">Prices are in kk: enter 170 for 170kk. Materials without a coin offer are purchased with Yang.</p></div></section></div>
+<div class="actions"><div><span id="save" class="tiny">Automatically saved in this browser</span><div class="tiny">Assumes successful attempts. NPC fees and failed upgrades are not included.</div></div><button class="btn primary" id="calculate">Calculate best plan →</button></div>
+<section id="result" class="result" aria-live="polite"></section><p class="footer">Minimizes the Yang paid for all required materials. Coins have no resale value in this calculation.</p></div>
+<div class="summary"><div><span>Without coins :</span><b id="total-summary">—</b></div><div><span>Saved :</span><b id="saved-summary">—</b></div><div class="tot"><span>Yang to pay :</span><b id="pay-summary">—</b></div></div>
+</main></div><datalist id="materials"></datalist><script src="/upgrade-coin-calculator/calculator.js" defer></script></body></html>
