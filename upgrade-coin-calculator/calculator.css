@@ -49,3 +49,10 @@
 @media(min-width:701px){.sidebar .nav-item{padding-top:8px;padding-bottom:8px}}
 @media(max-width:1200px){.uc .layout{grid-template-columns:1fr}.uc .coinhead{grid-template-columns:minmax(0,1fr) 110px 28px}}
 @media(max-width:700px){.uc .toolbar{justify-content:center}.uc .actions{align-items:stretch;flex-direction:column}.uc .primary{width:100%}.uc .stat{padding:12px}.uc .stat strong{font-size:1.25rem}.uc .stats{gap:7px}.uc .stat .tiny{font-size:.62rem}.uc .pbody{padding:14px 12px}.uc .sectionhead h2{padding:14px 12px;font-size:.91rem}.uc .sectionhead>.btn{padding:8px 10px;font-size:.75rem}.uc .result .badge{display:block}.uc td,.uc th{padding:12px}.uc table{min-width:520px}.uc .summary b{font-size:.86rem}}
+.uc .recipe{margin:16px 0 20px}
+.uc .pickers,.uc #steps{display:flex;flex-wrap:wrap;gap:8px;align-items:end}
+.uc .pickers label{flex:1 1 200px;max-width:400px}
+.uc select{display:block;width:100%;background:#22242b;color:inherit;border:1px solid var(--line);border-radius:7px;padding:10px;font:inherit}
+.uc #steps:not(:empty){margin-top:14px}
+.uc #steps [aria-pressed=true]{color:#e6d2a7;border-color:var(--gold);background:rgba(199,167,107,.12)}
+.uc .pickers label[hidden]{display:none}.uc #target-label{max-width:145px}
