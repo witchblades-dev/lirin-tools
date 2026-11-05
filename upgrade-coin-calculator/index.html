@@ -22,9 +22,16 @@
 <h1>UPGRADE COIN CALCULATOR</h1><div class="line"></div>
 <p class="note">Use your coins where they save the most Yang. Buy only the materials you need.</p>
 <div class="toolbar"><button class="btn ghost" id="example">Load helmet +4 example</button><button class="btn ghost" id="clear">Start fresh</button></div>
+<section class="panel recipe"><h2>Craft &amp; Upgrade</h2><div class="pbody">
+<div class="pickers"><label>Item<select id="item"></select></label>
+<label id="target-label" hidden>Craft through<select id="target" aria-label="Include craft through level"></select></label>
+<button class="btn ghost" id="import">Import from Upgrade Cost</button></div>
+<div id="steps" role="group" aria-label="Included steps"></div>
+<p id="recipe-note" class="tiny">Choosing an item replaces the required materials. Your shops and prices are kept.</p>
+</div></section>
 <div class="layout"><section class="panel"><div class="sectionhead"><h2>Coins & Shop Offers</h2><button class="btn" id="addcoin">+ Add coin</button></div><div class="pbody"><div id="coins"></div><p class="tiny">All costs are per item. Coin balances and quantities must be whole numbers.</p></div></section>
-<section class="panel"><h2>Required Materials</h2><div class="pbody"><p class="tiny">Enter the total materials for your craft and every upgrade step.</p><div class="need colheads"><span>Material</span><span>Quantity</span><span>Yang / item (kk)</span><span></span></div><div id="needs" class="rows"></div><button class="btn add ghost" id="addneed">+ Add material</button><p class="note smallnote">One material, one Yang price. Use the same name across shops to keep its price in sync.</p><p class="tiny">Prices are in kk: enter 170 for 170kk. Materials without a coin offer are purchased with Yang.</p></div></section></div>
-<div class="actions"><div><span id="save" class="tiny">Automatically saved in this browser</span><div class="tiny">Assumes successful attempts. NPC fees and failed upgrades are not included.</div></div><button class="btn primary" id="calculate">Calculate best plan →</button></div>
+<section class="panel"><h2>Required Materials</h2><div class="pbody"><p class="tiny">Review the quantities or add a material.</p><div class="need colheads"><span>Material</span><span>Quantity</span><span>Yang / item (kk)</span><span></span></div><div id="needs" class="rows"></div><button class="btn add ghost" id="addneed">+ Add material</button><p class="note smallnote">One material, one Yang price. Use the same name across shops to keep its price in sync.</p><p class="tiny">Enter 170 for 170kk, or use an explicit amount like 1.45k or 2.3kk. Materials without a coin offer are purchased with Yang.</p></div></section></div>
+<div class="actions"><div><span id="save" class="tiny">Automatically saved in this browser</span><div class="tiny">Material costs only. Imported quantities include the failures and adjustments set in Upgrade Cost.</div></div><button class="btn primary" id="calculate">Calculate best plan →</button></div>
 <section id="result" class="result" aria-live="polite"></section><p class="footer">Minimizes the Yang paid for all required materials. Coins have no resale value in this calculation.</p></div>
 <div class="summary"><div><span>Without coins :</span><b id="total-summary">—</b></div><div><span>Saved :</span><b id="saved-summary">—</b></div><div class="tot"><span>Yang to pay :</span><b id="pay-summary">—</b></div></div>
-</main></div><datalist id="materials"></datalist><script src="/upgrade-coin-calculator/calculator.js" defer></script></body></html>
+</main></div><datalist id="materials"></datalist><script src="/upgrade-cost/data.js" defer></script><script src="/upgrade-cost/recipe.js" defer></script><script src="/upgrade-coin-calculator/calculator.js" defer></script></body></html>
